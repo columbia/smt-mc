@@ -1,0 +1,3 @@
+[submodule "xtern"]
+	path = xtern
+	url = git@repair.cs.columbia.edu:xtern
