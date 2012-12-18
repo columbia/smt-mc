@@ -4,7 +4,7 @@ git clone git@repair.cs.columbia.edu:smt+mc
 
 2. Setting env variables, append them to your ~/.bashrc.
 export APPS_DIR=(the absolute directory path that you run the git clone commands)/apps
-export SMT_MC_ROOT=(the absolute directory path that you run the git clone commands)/apps
+export SMT_MC_ROOT=(the absolute directory path that you run the git clone commands)/smt+mc
 
 3. How to build the tool.
 tbd.
