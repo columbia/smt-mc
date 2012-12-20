@@ -6,6 +6,9 @@ git clone git@repair.cs.columbia.edu:smt+mc
 export APPS_DIR=(the absolute directory path that you run the git clone commands)/apps
 export SMT_MC_ROOT=(the absolute directory path that you run the git clone commands)/smt+mc
 
+If one needs to use a separate env variable in the submodule, she/he could define it like this:
+export XTERN_ROOT=$SMT_MC_ROOT/xtern/
+
 3. How to build the tool.
 tbd.
 
