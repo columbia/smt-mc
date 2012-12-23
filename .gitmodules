@@ -1,3 +1,6 @@
 [submodule "xtern"]
 	path = xtern
 	url = git@repair.cs.columbia.edu:xtern
+[submodule "mc-tools/dbug"]
+	path = mc-tools/dbug
+	url = https://github.com/jsimsa/dBug-tool.git
