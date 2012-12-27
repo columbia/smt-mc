@@ -15,6 +15,7 @@ make && make install
 
 # Compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
+patch -p1 < ../fix-dbug-warning.patch
 ./bootstrap.sh
 mkdir build
 cd build

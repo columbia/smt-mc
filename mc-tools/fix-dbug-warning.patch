@@ -1,0 +1,12 @@
+diff -ruN dbug-orig/src/explorer/Explorer.cc dbug/src/explorer/Explorer.cc
+--- dbug-orig/src/explorer/Explorer.cc	2012-12-27 14:22:33.359083360 -0500
++++ dbug/src/explorer/Explorer.cc	2012-12-27 14:22:52.713114000 -0500
+@@ -124,7 +124,7 @@
+ 	cout << "Starting arbiter on the background: " <<
+ 	  "dbug-arbiter-server -s schedule -b " << commands_.size() << endl;
+ 	bzero(buffer,BUFFER_SIZE);
+-	sprintf(buffer,"%u",commands_.size());
++	sprintf(buffer,"%u",(unsigned)commands_.size());
+ 	execlp("dbug-arbiter-server", "dbug-arbiter-server", 
+ 	       "-s", "schedule", "-b", buffer, (char *) 0);
+       }
