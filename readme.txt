@@ -2,9 +2,10 @@
 git clone git@repair.cs.columbia.edu:apps
 git clone git@repair.cs.columbia.edu:smt+mc
 
-2. Setting env variables, append them to your ~/.bashrc.
-export APPS_DIR=(the absolute directory path that you run the git clone commands)/apps
-export SMT_MC_ROOT=(the absolute directory path that you run the git clone commands)/smt+mc
+2. Setting env variables, append them to your ~/.bashrc. Run "echo $APPS_DIR" and
+"echo $SMT_MC_ROOT" to make sure they are correct.
+export APPS_DIR=(the absolute path of "apps")
+export SMT_MC_ROOT=(the absolute path of "smt+mc")
 
 If one needs to use a separate env variable in the submodule, she/he could define it like this:
 export XTERN_ROOT=$SMT_MC_ROOT/xtern/
