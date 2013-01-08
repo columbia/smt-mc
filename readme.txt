@@ -13,7 +13,7 @@ export XTERN_ROOT=$SMT_MC_ROOT/xtern/
 Go to $XTERN_ROOT and follow the readme.txt. You may need to (easily) install some 
 dependent libraries using "apt-get install ..." while building xtern and its benchmarks.
 
-3. How to build dbug.
+4. How to build dbug.
 Go to $SMT_MC_ROOT/mc-tools and run "./mk-dbug".
 > cd $SMT_MC_ROOT/mc-tools
 > ./mk-dbug
