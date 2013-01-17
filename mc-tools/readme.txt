@@ -1,11 +1,16 @@
-1. Add patch.
+0. Add patch.
 $ cd $SMT_MC_ROOT/mc-tools/dbug
 $ patch -p1 < ../fix-dbug-warning.txt
 $ patch -p1 < ../fix-rename.txt
 
+1. Libraries.
+You may need to install these (and maybe some more) libraries.
+Read this before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
+$ sudo apt-get install libboost-dev libboost-doc ruby-full rubygems php5 python-dev
+$ sudo gem install rubytree
+$ sudo gem install xml-simple
+
 2. Run the script to install dbug with thrift.
-You may need to "apt-get install" some libraries depending on thrift.
-Read this before you run "mk-dbug": www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
 $ cd $SMT_MC_ROOT/mc-tools
 $ ./mk-dbug
 
@@ -52,3 +57,4 @@ that ruby does something weird to this character.
 E.g., use this "dbug-run" script:
 $ cd $SMT_MC_ROOT/xtern/apps/pbzip2
 $ ./dbug-run
+
