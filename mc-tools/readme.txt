@@ -15,7 +15,7 @@ $ export PATH=$PATH:$SMT_MC_ROOT/mc-tools/dbug/install/bin
 4. How to use dbug.
 $ cd $SMT_MC_ROOT/mc-tools
 $ gcc $SMT_MC_ROOT/mc-tools/dbug/tutorial/example-2.c -lpthread -o dbug-ex2
-$ explorer.rb --prefix /home/heming/rcs/smt+mc/mc-tools/dbug/install/ ./dbug-ex2
+$ explorer.rb --prefix $SMT_MC_ROOT/mc-tools/dbug/install/ ./dbug-ex2
 
 Then you will see a "dbug-logs" directory in your local working directory, and
 a few "dbug-history-x". E.g., "dbug-history-1" is one of the exploration dbug explored.
