@@ -54,7 +54,7 @@ http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15213-f10/www/manual.pdf
 And make sure you use absolute path, avoid "~" within your quote, since seems
 that ruby does something weird to this character.
 
-E.g., use this "dbug-run" script:
+E.g., use this "chk-run" script for pbzip2:
 $ cd $SMT_MC_ROOT/xtern/apps/pbzip2
 $ ./chk-run
 
