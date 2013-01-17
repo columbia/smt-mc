@@ -23,3 +23,5 @@ export PATH=$PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/bin/
 ../configure --prefix=$SMT_MC_ROOT/mc-tools/dbug/install
 make && make install
 
+#cd $SMT_MC_ROOT/mc-tools
+#gcc $SMT_MC_ROOT/mc-tools/dbug/tutorial/example-2.c -lpthread -o dbug-ex2
