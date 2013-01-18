@@ -56,5 +56,6 @@ that ruby does something weird to this character.
 
 E.g., use this "chk-run" script for pbzip2:
 $ cd $SMT_MC_ROOT/xtern/apps/pbzip2
+$ ./mk
 $ ./chk-run
 
