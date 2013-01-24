@@ -36,5 +36,5 @@ $ ./mk-xtern+dbug
 
 Run:
 $ gcc $SMT_MC_ROOT/mc-tools/dbug/tutorial/example-2.c -lpthread -o dbug-ex2
-$ explorer.rb --prefix $SMT_MC_ROOT/mc-tools/dbug/install-xtern+dbug/ ./dbug-ex2
+$ $SMT_MC_ROOT/mc-tools/dbug/install-xtern+dbug/bin/explorer.rb --prefix $SMT_MC_ROOT/mc-tools/dbug/install-xtern+dbug/ ./dbug-ex2
 

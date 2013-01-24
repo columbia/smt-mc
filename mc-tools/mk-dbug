@@ -11,7 +11,7 @@ tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
 # Compile thrift.
 cd thrift-$THRIFT_VER
 ./configure --prefix=$PWD/install --with-php_extension=/etc/php5/conf.d
-make && make install
+make -j64 && make install
 
 # Compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
@@ -21,7 +21,5 @@ cd build
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/lib/pkgconfig/
 export PATH=$PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/bin/
 ../configure --prefix=$SMT_MC_ROOT/mc-tools/dbug/install
-make && make install
+make -j64 && make install
 
-#cd $SMT_MC_ROOT/mc-tools
-#gcc $SMT_MC_ROOT/mc-tools/dbug/tutorial/example-2.c -lpthread -o dbug-ex2

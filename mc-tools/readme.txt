@@ -14,13 +14,10 @@ $ sudo gem install xml-simple
 $ cd $SMT_MC_ROOT/mc-tools
 $ ./mk-dbug
 
-3. Update the $PATH in  your ~/.bashrc, run "echo $PATH" to make sure it is correct.
-$ export PATH=$PATH:$SMT_MC_ROOT/mc-tools/dbug/install/bin
-
-4. How to use dbug.
+3. How to use dbug.
 $ cd $SMT_MC_ROOT/mc-tools
 $ gcc $SMT_MC_ROOT/mc-tools/dbug/tutorial/example-2.c -lpthread -o dbug-ex2
-$ explorer.rb --prefix $SMT_MC_ROOT/mc-tools/dbug/install/ ./dbug-ex2
+$ $SMT_MC_ROOT/mc-tools/dbug/install/bin/explorer.rb --prefix $SMT_MC_ROOT/mc-tools/dbug/install/ ./dbug-ex2
 
 Then you will see a "dbug-logs" directory in your local working directory, and
 a few "dbug-history-x". E.g., "dbug-history-1" is one of the exploration dbug explored.
@@ -50,7 +47,7 @@ Please refer to the user manual for more details of this scheduling plan.
 http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15213-f10/www/manual.pdf
 
 
-5. If you want to run a program with multiple arguments, you need a quote.
+4. If you want to run a program with multiple arguments, you need a quote.
 And make sure you use absolute path, avoid "~" within your quote, since seems
 that ruby does something weird to this character.
 

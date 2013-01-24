@@ -11,10 +11,10 @@ chmod 777 dbug-gen.rb
 # Re-compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
 ./bootstrap.sh
-mkdir build-$PROJ
+mkdir -p build-$PROJ
 cd build-$PROJ
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/lib/pkgconfig/
 export PATH=$PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/bin/
 ../configure --prefix=$SMT_MC_ROOT/mc-tools/dbug/install-$PROJ
-make && make install
+make -j64 && make install
 
