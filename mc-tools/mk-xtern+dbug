@@ -1,7 +1,12 @@
 #!/bin/bash
 
 THRIFT_VER=0.9.0
-PROJ=xtern+dbug
+PROJ="xtern+dbug"
+
+# Update src of dbug based on the new api.xml.
+cd $SMT_MC_ROOT/mc-tools/dbug/src/scripts
+chmod 777 dbug-gen.rb
+./dbug-gen.rb
 
 # Re-compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug

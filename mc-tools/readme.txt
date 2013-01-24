@@ -1,7 +1,7 @@
 0. Add patch.
 $ cd $SMT_MC_ROOT/mc-tools/dbug
-$ patch -p1 < ../fix-dbug-warning.txt
-$ patch -p1 < ../fix-rename.txt
+$ patch -p1 < ../fix-dbug-warning.patch
+$ patch -p1 < ../fix-rename.patch
 
 1. Libraries.
 You may need to install these (and maybe some more) libraries.
