@@ -1,0 +1,15 @@
+#!/bin/bash
+
+THRIFT_VER=0.9.0
+PROJ=xtern+dbug
+
+# Re-compile dbug.
+cd $SMT_MC_ROOT/mc-tools/dbug
+./bootstrap.sh
+mkdir build-$PROJ
+cd build-$PROJ
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/lib/pkgconfig/
+export PATH=$PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/bin/
+../configure --prefix=$SMT_MC_ROOT/mc-tools/dbug/install-$PROJ
+make && make install
+

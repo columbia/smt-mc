@@ -1,0 +1,92 @@
+--- dbug-orig-src/src/scripts/api.xml	2013-01-16 23:51:49.556032829 -0500
++++ dbug/src/scripts/api.xml	2013-01-23 19:21:41.934972801 -0500
+@@ -64,7 +64,7 @@
+       <args type="int *" var="h_errnop" rep="%d" />
+     </function>
+   </group>
+-  <group name="process-mgmt" interpose="true">
++  <group name="process-mgmt" interpose="false">
+     <function name="setsid" err_check="true">
+       <header>unistd.h</header>
+       <ret_value type="pid_t" rep="%lu" error="-1" />
+@@ -181,7 +181,7 @@
+       <args type="int" var="options" rep="%d" />
+     </function>
+   </group>
+-  <group name="pthread-attr" interpose="true">
++  <group name="pthread-attr" interpose="false">
+     <function name="pthread_attr_destroy">
+       <header>pthread.h</header>
+       <ret_value type="int" rep="%d" />
+@@ -316,7 +316,7 @@
+       <args type="size_t" var="stacksize" rep="%z" />
+     </function>
+   </group>
+-  <group name="pthread-barrier" interpose="true">
++  <group name="pthread-barrier" interpose="false">
+     <function name="pthread_barrier_init" order="true">
+       <header>pthread.h</header>
+       <ret_value type="int" rep="%d" />
+@@ -360,7 +360,7 @@
+       <args type="int" var="pshared" rep="%d" />
+     </function>
+   </group>
+-  <group name="pthread-cond" interpose="true">
++  <group name="pthread-cond" interpose="false">
+     <function name="pthread_cond_init" order="true">
+       <header>pthread.h</header>
+       <ret_value type="int" rep="%d" />
+@@ -433,7 +433,7 @@
+       <args type="clockid_t" var="clock_id" rep="%lu" />
+     </function>
+   </group>
+-  <group name="pthread-keys" interpose="true">
++  <group name="pthread-keys" interpose="false">
+     <function name="pthread_key_create">
+       <header>pthread.h</header>
+       <ret_value type="int" rep="%d" />
+@@ -457,7 +457,7 @@
+       <args type="const void *" var="value" rep="%p" />
+     </function>
+   </group>
+-  <group name="pthread-mgmt" interpose="true">
++  <group name="pthread-mgmt" interpose="false">
+     <!-- pthread_cancel breaks dBug in a cryptic way -->
+     <function name="pthread_cancel">
+       <header>pthread.h</header>
+@@ -572,7 +572,7 @@
+       <args type="void" var="" rep="" />
+     </function>
+   </group>
+-  <group name="pthread-mutex" interpose="true">
++  <group name="pthread-mutex" interpose="false">
+     <function name="pthread_mutex_destroy" order="true">
+       <header>pthread.h</header>
+       <ret_value type="int" rep="%d" />
+@@ -685,7 +685,7 @@
+       <args type="int" var="type" rep="%d" />
+     </function>
+   </group>
+-  <group name="pthread-rwlock" interpose="true">
++  <group name="pthread-rwlock" interpose="false">
+     <function name="pthread_rwlock_init" order="true">
+       <header>pthread.h</header>
+       <ret_value type="int" rep="%d" />
+@@ -763,7 +763,7 @@
+       <args type="int" var="pshared" rep="%d" />
+     </function>
+   </group>
+-  <group name="pthread-spin" interpose="true">
++  <group name="pthread-spin" interpose="false">
+     <function name="pthread_spin_destroy" order="true">
+       <header>pthread.h</header>
+       <ret_value type="int" rep="%d" />
+@@ -818,7 +818,7 @@
+       <args type="const char * DBUG_RESTRICT" var="delim" rep="%s" />
+     </function>
+   </group>
+-  <group name="semaphore" interpose="true">
++  <group name="semaphore" interpose="false">
+     <function name="sem_init" order="true" err_check="true">
+       <header>semaphore.h</header>
+       <ret_value type="int" rep="%d" error="-1" />
