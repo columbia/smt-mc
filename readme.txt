@@ -9,6 +9,15 @@ $ cd smt+mc
 $ git submodule init
 $ git submodule update
 
+Importantly, please note that, if you want to checkout a newer version of 
+"smt+mc" sometime later (including its submodules "xtern" and "dbug"),
+you have to run BOTH "pull" and "submodule update" in the "smt+mc" directory.
+The git submodule mechanism is so painful :)
+$ cd $SMT_MC_ROOT
+$ git pull
+$ git submodule update
+
+
 2. Setting env variables, append them to your ~/.bashrc. Run "echo $APPS_DIR" and
 "echo $SMT_MC_ROOT" to make sure they are correct.
 $ export APPS_DIR=the absolute path of "apps"
