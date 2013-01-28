@@ -15,7 +15,7 @@ you have to run BOTH "pull" and "submodule update" in the "smt+mc" directory.
 The git submodule mechanism is so painful :)
 $ cd $SMT_MC_ROOT
 $ git pull
-$ git submodule update
+$ git submodule update   (if you don't run this step, submodules won't be updated!!!)
 
 
 2. Setting env variables, append them to your ~/.bashrc. Run "echo $APPS_DIR" and
