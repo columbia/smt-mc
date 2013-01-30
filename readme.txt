@@ -40,6 +40,7 @@ http://www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
 Build:
 $ cd $SMT_MC_ROOT/mc-tools/dbug
 $ patch -p1 < ../disable-dbug-intra-process.patch
+$ patch -p1 < ../comment-basename.patch
 $ patch -p1 < ../add-ld-preload-xtern.patch
 $ cd $SMT_MC_ROOT/mc-tools
 $ ./mk-xtern+dbug

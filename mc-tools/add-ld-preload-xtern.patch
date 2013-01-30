@@ -13,7 +13,7 @@
  
    # Start the test
 -  ENV[ 'LD_PRELOAD' ] = $ilayer
-+  ENV[ 'LD_PRELOAD' ] = "#{$ilayer}  #{options[:xtern]}"
++  ENV[ 'LD_PRELOAD' ] = "#{options[:xtern]}"
 +  puts "checking LD_PRELOAD = #{ENV[ 'LD_PRELOAD' ]}"
    system(*(ARGV[0]))
    ENV[ 'LD_PRELOAD' ] = nil
