@@ -1,7 +1,7 @@
 1. Libraries.
 You may need to install these (and maybe some more) libraries.
 Read this before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
-$ sudo apt-get install libboost-dev libboost-doc ruby-full rubygems php5 python-dev
+$ sudo apt-get install libboost-dev libboost-doc ruby-full rubygems php5 python-dev libxml++2.6-dev
 $ sudo gem install rubytree
 $ sudo gem install xml-simple
 
