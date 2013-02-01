@@ -1,8 +1,3 @@
-0. Add patch.
-$ cd $SMT_MC_ROOT/mc-tools/dbug
-$ patch -p1 < ../fix-dbug-warning.patch
-$ patch -p1 < ../fix-rename.patch
-
 1. Libraries.
 You may need to install these (and maybe some more) libraries.
 Read this before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf

@@ -11,7 +11,7 @@ tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
 # Compile thrift.
 cd thrift-$THRIFT_VER
 ./configure --prefix=$PWD/install --with-php_extension=/etc/php5/conf.d
-make -j64 && make install
+make && make install
 
 # Compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
