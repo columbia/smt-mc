@@ -11,6 +11,7 @@ tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
 # Compile thrift.
 cd thrift-$THRIFT_VER
 ./configure --prefix=$PWD/install --with-php_extension=/etc/php5/conf.d
+# We can not add -j64 for make, since there is process races and the make would fail sometimes...
 make && make install
 
 # Compile dbug.
