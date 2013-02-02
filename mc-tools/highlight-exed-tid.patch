@@ -1,0 +1,16 @@
+--- dbug/src/arbiter/arbiter-thread.cc	2013-02-01 17:16:39.919067246 -0500
++++ arbiter-thread.cc	2013-02-02 17:48:07.459908291 -0500
+@@ -113,11 +113,11 @@
+   // Log the choice, the number of enabled request, and the number of
+   // pending requests.
+   if (ss->counter <= ss->nmoves) {
+-    fprintf (history, "%d %d %u %u %u %u\n", n, ss->nenabled,
++    fprintf (history, "[%d]   %d %u %u %u %u\n", n, ss->nenabled,
+              (uint32_t) ss->requests.size (), ss->nthreads,
+              ss->moves[ss->counter][0], ss->counter);
+   } else {
+-    fprintf (history, "%d %d %u %u %u\n", n, ss->nenabled,
++    fprintf (history, "[%d]   %d %u %u %u\n", n, ss->nenabled,
+              (uint32_t) ss->requests.size (), ss->nthreads, ss->counter);
+   }
+   list < request_t * >::iterator tmp = ss->requests.begin ();
