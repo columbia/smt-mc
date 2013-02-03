@@ -5,12 +5,12 @@
    // pending requests.
    if (ss->counter <= ss->nmoves) {
 -    fprintf (history, "%d %d %u %u %u %u\n", n, ss->nenabled,
-+    fprintf (history, "[%d]   %d %u %u %u %u\n", n, ss->nenabled,
++    fprintf (history, "    %d    %d %u %u %u %u\n", n, ss->nenabled,
               (uint32_t) ss->requests.size (), ss->nthreads,
               ss->moves[ss->counter][0], ss->counter);
    } else {
 -    fprintf (history, "%d %d %u %u %u\n", n, ss->nenabled,
-+    fprintf (history, "[%d]   %d %u %u %u\n", n, ss->nenabled,
++    fprintf (history, "    %d    %d %u %u %u\n", n, ss->nenabled,
               (uint32_t) ss->requests.size (), ss->nthreads, ss->counter);
    }
    list < request_t * >::iterator tmp = ss->requests.begin ();
