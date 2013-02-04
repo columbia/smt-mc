@@ -50,7 +50,7 @@
      </function>
    </group>
 -  <group name="pthread-mgmt" interpose="true">
-+  <group name="pthread-mgmt" interpose="false">
++  <group name="pthread-mgmt"  interpose="true">
      <!-- pthread_cancel breaks dBug in a cryptic way -->
      <function name="pthread_cancel">
        <header>pthread.h</header>
