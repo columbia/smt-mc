@@ -1,0 +1,9 @@
+diff -rupN thrift-0.9.0/lib/cpp/thrift.pc.in thrift-0.9.0-modified/lib/cpp/thrift.pc.in
+--- thrift-0.9.0/lib/cpp/thrift.pc.in	2012-10-11 20:58:06.000000000 -0400
++++ thrift-0.9.0-modified/lib/cpp/thrift.pc.in	2013-02-07 01:54:57.725079243 -0500
+@@ -26,4 +26,4 @@ Name: Thrift
+ Description: Thrift C++ API
+ Version: @VERSION@
+ Libs: -L${libdir} -lthrift
+-Cflags: -I${includedir}/thrift
++Cflags: -I${includedir}

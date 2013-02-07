@@ -10,6 +10,7 @@ tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
 
 # Compile thrift.
 cd thrift-$THRIFT_VER
+patch -p1 < ../thrift-pkg-config.patch
 ./configure --prefix=$PWD/install --without-php --without-ruby --without-python --without-erlang
 # We can not add -j64 for make, since there is process races and the make would fail sometimes...
 make && make install
