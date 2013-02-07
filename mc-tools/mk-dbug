@@ -10,9 +10,8 @@ tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
 
 # Compile thrift.
 cd thrift-$THRIFT_VER
-#./configure --prefix=$PWD/install --with-php_extension=/etc/php5/conf.d
-./configure --prefix=$PWD/install --without-c_glib --without-csharp --without-erlang --without-haskell \
---without-java --without-perl --without-php --without-python --without-qt --without-ruby
+patch -p1 < ../../thrift-pkg-config.patch
+./configure --prefix=$PWD/install --without-php --without-ruby --without-python --without-erlang
 # We can not add -j64 for make, since there is process races and the make would fail sometimes...
 make -j4 && make install
 
@@ -22,7 +21,7 @@ cd $SMT_MC_ROOT/mc-tools/dbug
 mkdir build
 cd build
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/lib/pkgconfig/
-export PATH=$PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/bin/
+export PATH=$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/bin/:$PATH
 ../configure --prefix=$SMT_MC_ROOT/mc-tools/dbug/install
 make -j64 && make install
 
