@@ -13,7 +13,7 @@ cd thrift-$THRIFT_VER
 ./configure --prefix=$PWD/install --without-c_glib --without-csharp --without-erlang --without-haskell \
 --without-java --without-perl --without-php --without-python --without-qt4 --without-ruby 
 # We can not add -j64 for make, since there is process races and the make would fail sometimes...
-make && make install
+make -j4 && make install
 
 # Compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
