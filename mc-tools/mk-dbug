@@ -1,6 +1,6 @@
 #!/bin/bash
 
-THRIFT_VER=0.9.0
+THRIFT_VER=1.0.0-dev
 
 # Decompress.
 cd $SMT_MC_ROOT/mc-tools/dbug
@@ -10,8 +10,8 @@ tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
 
 # Compile thrift.
 cd thrift-$THRIFT_VER
-patch -p1 < ../../thrift-pkg-config.patch
-./configure --prefix=$PWD/install --without-php --without-ruby --without-python --without-erlang
+./configure --prefix=$PWD/install --without-c_glib --without-csharp --without-erlang --without-haskell \
+--without-java --without-perl --without-php --without-python --without-qt4 --without-ruby 
 # We can not add -j64 for make, since there is process races and the make would fail sometimes...
 make && make install
 
