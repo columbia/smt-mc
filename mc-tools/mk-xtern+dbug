@@ -1,6 +1,6 @@
 #!/bin/bash
 
-THRIFT_VER=0.9.0
+THRIFT_VER=1.0.0-dev
 PROJ="xtern+dbug"
 
 # Update src of dbug based on the new api.xml.
