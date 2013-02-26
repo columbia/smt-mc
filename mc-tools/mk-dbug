@@ -3,17 +3,17 @@
 THRIFT_VER=1.0.0-dev
 
 # Decompress.
-cd $SMT_MC_ROOT/mc-tools/dbug
-rm thrift-$THRIFT_VER -rf
-rm install -rf
-tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
+#cd $SMT_MC_ROOT/mc-tools/dbug
+#rm thrift-$THRIFT_VER -rf
+#rm install -rf
+#tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
 
 # Compile thrift.
-cd thrift-$THRIFT_VER
-./configure --prefix=$PWD/install --without-c_glib --without-csharp --without-erlang --without-haskell \
---without-java --without-perl --without-php --without-python --without-qt4 --without-ruby 
+#cd thrift-$THRIFT_VER
+#./configure --prefix=$PWD/install --without-c_glib --without-csharp --without-erlang --without-haskell \
+#--without-java --without-perl --without-php --without-python --without-qt4 --without-ruby 
 # We can not add -j64 for make, since there is process races and the make would fail sometimes...
-make -j4 && make install
+#make -j4 && make install
 
 # Compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
