@@ -19,7 +19,7 @@ diff -ruN dbug-orig/src/interposition/pthread-mgmt.cc dbug/src/interposition/pth
 +  //return Original::pthread_setconcurrency(new_level);
 +  //Heming: a hack for the integrated xtern+dbug: detach current thread from dbug.
 +  arbiter_->UpdateThreadStatus(arbiter_->ThreadID(pthread_self()), Thread::TERMINATED);
-+  return 0;
++  return new_level;
  }
  #endif
  
