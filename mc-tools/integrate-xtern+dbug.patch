@@ -1,0 +1,23 @@
+diff -ruN dbug-orig/src/interposition/pthread-mgmt.cc dbug/src/interposition/pthread-mgmt.cc
+--- dbug-orig/src/interposition/pthread-mgmt.cc	2013-03-03 23:36:01.073510264 -0500
++++ dbug/src/interposition/pthread-mgmt.cc	2013-03-03 23:34:21.465513831 -0500
+@@ -200,13 +200,17 @@
+ 
+ #if DBUG_HAVE_PTHREAD_GETCONCURRENCY
+ int Handler::pthread_getconcurrency() {
+-  return Original::pthread_getconcurrency();
++  //return Original::pthread_getconcurrency();
++  //Heming: a hack for the integrated xtern+dbug: attach current thread to dbug.
++  arbiter_->UpdateThreadStatus(arbiter_->ThreadID(pthread_self()), Thread::RUNNING);
+ }
+ #endif
+ 
+ #if DBUG_HAVE_PTHREAD_SETCONCURRENCY
+ int Handler::pthread_setconcurrency(int new_level) {
+-  return Original::pthread_setconcurrency(new_level);
++  //return Original::pthread_setconcurrency(new_level);
++  //Heming: a hack for the integrated xtern+dbug: detach current thread from dbug.
++  arbiter_->UpdateThreadStatus(arbiter_->ThreadID(pthread_self()), Thread::TERMINATED);
+ }
+ #endif
+ 
