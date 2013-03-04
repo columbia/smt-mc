@@ -23,5 +23,5 @@ cd build
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/lib/pkgconfig/
 export PATH=$SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/bin/:$PATH
 ../configure --prefix=$SMT_MC_ROOT/mc-tools/dbug/install
-make -j64 CXX=g++-4.6 && make CC=g++-4.6 install
+make -j64 CXX=g++-4.6 && make CXX=g++-4.6 install
 
