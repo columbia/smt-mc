@@ -9,9 +9,9 @@ pthread_mutex_t mutex2;
 void *
 thread(void *args)
 {
-  assert(pthread_mutex_lock(&mutex) == 0);
+  //assert(pthread_mutex_lock(&mutex) == 0);
   //printf("Critical section slave.\n");
-  assert(pthread_mutex_unlock(&mutex) == 0);
+  //assert(pthread_mutex_unlock(&mutex) == 0);
 
   tern_non_det_start();
   printf("\n\n============== start lock  =====================\n\n");
