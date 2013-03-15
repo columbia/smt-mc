@@ -1,0 +1,6 @@
+<config>
+  <arbiter port="20011" command="/home/heming/rcs/smt+mc//mc-tools/dbug/install/bin/dbug-arbiter -l"/>
+  <explorer log_dir="." port="20012" timeout="100"/>
+  <interposition path="/home/heming/rcs/smt+mc//mc-tools/dbug/install/lib/libdbug.so"/>
+  <program command="/home/heming/rcs/smt+mc/mc-tools/tests/test-dbug-on-off"/>
+</config>
