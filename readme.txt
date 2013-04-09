@@ -22,24 +22,9 @@ $ git submodule update   (if you don't run this step, submodules won't be update
 "echo $SMT_MC_ROOT" to make sure they are correct.
 $ export SMT_MC_ROOT=the absolute path of "smt+mc"
 
-If one needs to use a separate env variable in the submodule, she/he could define it like this:
-$ export XTERN_ROOT=$SMT_MC_ROOT/xtern/
+3. How to build Parrot (a.k.a., xtern). Refer to $SMT_MC_ROOT/xtern/readme.txt.
+It also contains information of our performance hints.
 
-3. How to build xtern.
-Go to $XTERN_ROOT and follow the readme.txt. You may need to (easily) install some 
-dependent libraries using "apt-get install ..." while building xtern and its benchmarks.
-If you only want to checkout parrot only, not the parrot+dbug eco system, you can
-skip the following steps.
-
-4. How to build dbug. Please read the $SMT_MC_ROOT/mc-tools/readme.txt for more details.
-You may need to (easily) install some dependent libraries using "apt-get install ..."
-while building dbug. Please read this pdf link to install the dependent libraries.
-http://www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
-
-5. How to integrate xtern with dbug (after successfully building both of them):
-Build:
-$ cd $SMT_MC_ROOT/mc-tools/dbug
-$ ./mk-xtern+dbug
-
-6. TBD.
+4. How to build Parrot with a model checking tool dbug.
+Refer to $SMT_MC_ROOT/mc-tools/readme.txt.
 
