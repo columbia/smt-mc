@@ -2,7 +2,6 @@
 http://git-scm.com/book/en/Git-Tools-Submodules
 
 1. What to checkout.
-> git clone https://github.com/hemingcui/smt-mc.git smt+mc, OR:
 > git clone git@repair.cs.columbia.edu:smt+mc
 > cd smt+mc
 > git submodule init
