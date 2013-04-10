@@ -1,12 +1,24 @@
 #!/bin/bash
 
+DBUG_VER=0.3.0-beta
 THRIFT_VER=1.0.0-dev
+
+# If dbug does not exist, download from Internet.
+cd $SMT_MC_ROOT/mc-tools/
+if [ ! -d dbug ]; then
+    http://www.cs.cmu.edu/~jsimsa/dbug/dbug-$DBUG_VER.tar.gz
+fi
+tar zxvf dbug-$DBUG_VER.tar.gz
+mv dbug-$DBUG_VER dbug
 
 # Decompress.
 cd $SMT_MC_ROOT/mc-tools/dbug
 rm thrift-$THRIFT_VER -rf
 rm install -rf
-tar zxvf $APPS_DIR/sys/thrift-$THRIFT_VER.tar.gz
+if [ ! -f thrift-$THRIFT_VER.tar.gz ]; then
+    wget http://www.cs.cmu.edu/~jsimsa/dbug/thrift-$THRIFT_VER.tar.gz
+fi
+tar zxvf thrift-$THRIFT_VER.tar.gz
 
 # Compile thrift.
 cd thrift-$THRIFT_VER
