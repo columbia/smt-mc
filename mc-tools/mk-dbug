@@ -6,7 +6,7 @@ THRIFT_VER=1.0.0-dev
 # If dbug does not exist, download from Internet.
 cd $SMT_MC_ROOT/mc-tools/
 if [ ! -d dbug ]; then
-    http://www.cs.cmu.edu/~jsimsa/dbug/dbug-$DBUG_VER.tar.gz
+    wget http://www.cs.cmu.edu/~jsimsa/dbug/dbug-$DBUG_VER.tar.gz
 fi
 tar zxvf dbug-$DBUG_VER.tar.gz
 mv dbug-$DBUG_VER dbug
