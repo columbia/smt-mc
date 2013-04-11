@@ -36,10 +36,10 @@ int main() {
   dbug_on();
   pthread_create(&t, NULL, my_func, NULL);
 
-  tern_non_det_start();
+  pcs_enter();
 pthread_mutex_lock(&mutex);
    pthread_mutex_unlock(&mutex);
-  tern_non_det_end();
+  pcs_exit();
 
   dbug_off();
 
