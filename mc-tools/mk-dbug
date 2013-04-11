@@ -7,9 +7,9 @@ THRIFT_VER=1.0.0-dev
 cd $SMT_MC_ROOT/mc-tools/
 if [ ! -d dbug ]; then
     wget http://www.cs.cmu.edu/~jsimsa/dbug/dbug-$DBUG_VER.tar.gz
+    tar zxvf dbug-$DBUG_VER.tar.gz
+    mv dbug-$DBUG_VER dbug
 fi
-tar zxvf dbug-$DBUG_VER.tar.gz
-mv dbug-$DBUG_VER dbug
 
 # Decompress.
 cd $SMT_MC_ROOT/mc-tools/dbug
