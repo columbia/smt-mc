@@ -17,7 +17,7 @@ dbug_off();
   //assert(pthread_mutex_unlock(&mutex) == 0);
 
 dbug_on();
-  tern_non_det_start();
+  pcs_enter();
   int n = 0;
   //for (n = 0; n < 2; n++) {
     printf("\n\n\n\n\n\n\n\n\n============== start non-det self %u  =====================\n\n", (unsigned)pthread_self());
@@ -31,7 +31,7 @@ dbug_on();
     //}
     printf("\n\n============== end non-det self %u  =====================\n\n\n\n\n\n\n\n\n\n", (unsigned)pthread_self());
   //}
-  tern_non_det_end();
+  pcs_exit();
 dbug_off();
 
 dbug_on();
@@ -50,9 +50,9 @@ main(int argc, char *argv[])
   assert(pthread_mutex_init(&mutex,NULL) == 0);
 
   dbug_on();
-  tern_non_det_start();
+  pcs_enter();
   assert(pthread_mutex_init(&mutex2,NULL) == 0);
-  tern_non_det_end();
+  pcs_exit();
     dbug_off();
 
     dbug_on();
@@ -61,11 +61,11 @@ main(int argc, char *argv[])
   dbug_off();
 
   dbug_on();
-  tern_non_det_start();
+  pcs_enter();
   assert(pthread_mutex_lock(&mutex2) == 0);
   printf("Critical section master.\n");
   assert(pthread_mutex_unlock(&mutex2) == 0);
-  tern_non_det_end();
+  pcs_exit();
 dbug_off();
 
     //sleep(10);
