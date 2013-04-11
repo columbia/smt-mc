@@ -14,7 +14,7 @@ Importantly, please note that, if you want to checkout a newer version of
 you have to run BOTH "pull" and "submodule update" in the "smt+mc" directory.
 And you can ONLY run the two git commands in the root directory "smt+mc",
 otherwise you won't get a correct update. The git submodule mechanism is so painful :)
-> cd smt+
+> cd smt+mc
 > git pull
 > git submodule update   (if you don't run this step, submodules won't be updated!!!)
 
@@ -42,3 +42,4 @@ The "A" column in these three tabs shows what kinds of performance hints are add
 soft barriers, "N" means performance critical sections, and "x" or blank means no hints are added.
 The "comparison" tab shows the performance comparisons of three systems, Parrot, dthreads and CoreDet.
 The "model checking results(small)" tab shows the model checking results of the Parror+dBug ecosystem.
+
