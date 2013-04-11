@@ -11,12 +11,12 @@ void *my_func(void *args) {
   dbug_off();
   
 
-  tern_non_det_start();
+  pcs_enter();
   dbug_on();
   pthread_mutex_lock(&mutex);  
    pthread_mutex_unlock(&mutex);
   dbug_off();
-  tern_non_det_end();
+  pcs_exit();
 
   dbug_detach();
   tern_detach();
