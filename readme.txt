@@ -2,14 +2,13 @@
 
 https://docs.google.com/spreadsheet/ccc?key=0Arky53jIFG9hdE03ZmZrYlU3dXM4Um5xLU85OGxCMGc#gid=0
 
-There are multiple tabs in this doc. Three tabs, "performance number",
-"mplayer experiments", and "parallel stl" show the performance overhead
-of Parrot over nondeterministic executions. The "A" column in these
-three tabs shows what kinds of performance hints are added, "@" means
-soft barriers, "N" means performance critical sections, and "x" or blank
-means no hints are added. The "comparison" tab shows the performance
+There are multiple tabs in this doc. The "performance overhead" tab
+shows the performance overhead of Parrot over nondeterministic executions.
+The "A" column in this tab shows what kinds of performance hints are added.
+"@" means soft barriers, "N" means performance critical sections, and "x" or blank
+means no hints are added. The "performance comparisons" tab shows the performance
 comparisons of three systems, Parrot, dthreads and CoreDet.
-The "model checking results(small)" tab shows the model checking results
+The "model checking results" tab shows the model checking results
 of the Parror+dBug ecosystem.
 
 
