@@ -11,7 +11,11 @@ Read this doc before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
 > ./mk-dbug
 
 
-3. How to run the Parrot+dBug ecosystem and run dBug alone.
+3. Set environment variables. Run "echo $LD_LIBRARY_PATH" to make sure it is correct.
+> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$SMT_MC_ROOT/mc-tools/dbug/install/lib
+
+
+4. How to run the Parrot+dBug ecosystem and run dBug alone.
 There are a number of $SMT_MC_ROOT/xtern/eval/*-dbug.cfg files,
 and they are the config files for all programs running with Parrot+dBug or dBug alone.
 
