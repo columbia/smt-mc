@@ -5,9 +5,11 @@ Read this doc before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
 > sudo gem install rubytree
 > sudo gem install xml-simple
 
+
 2. Install dBug.
 > cd $SMT_MC_ROOT/mc-tools
 > ./mk-dbug
+
 
 3. How to run the Parrot+dBug ecosystem and run dBug alone.
 There are a number of $SMT_MC_ROOT/xtern/eval/*-dbug.cfg files,
