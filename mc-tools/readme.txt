@@ -1,57 +1,38 @@
-0. Add a number of patches.
-$ cd $SMT_MC_ROOT/mc-tools/dbug
-$ patch -p1 < ../highlight-exed-tid.patch
-
-1. Libraries.
+1. Install libraries for dBug.
 You may need to install these (and maybe some more) libraries.
-Read this before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
-$ sudo apt-get install libboost-dev libboost-doc ruby-full rubygems php5 python-dev libxml++2.6-dev
-$ sudo gem install rubytree
-$ sudo gem install xml-simple
+Read this doc before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
+> sudo apt-get install libboost-dev libboost-doc ruby-full rubygems php5 python-dev libxml++2.6-dev
+> sudo gem install rubytree
+> sudo gem install xml-simple
 
-2. Run the script to install dbug with thrift.
-$ cd $SMT_MC_ROOT/mc-tools
-$ ./mk-dbug
+2. Install dBug.
+> cd $SMT_MC_ROOT/mc-tools
+> ./mk-dbug
 
-3. How to use dbug.
-$ cd $SMT_MC_ROOT/mc-tools
-$ gcc $SMT_MC_ROOT/mc-tools/dbug/tutorial/example-2.c -lpthread -o dbug-ex2
-$ $SMT_MC_ROOT/mc-tools/dbug/install/bin/explorer.rb --prefix $SMT_MC_ROOT/mc-tools/dbug/install/ ./dbug-ex2
+3. How to run the Parrot+dBug ecosystem and run dBug alone.
+There are a number of $SMT_MC_ROOT/xtern/eval/*-dbug.cfg files,
+and they are the config files for all programs running with Parrot+dBug or dBug alone.
 
-Then you will see a "dbug-logs" directory in your local working directory, and
-a few "dbug-history-x". E.g., "dbug-history-1" is one of the exploration dbug explored.
-Also, there will be trace files located in /tmp/dbug/.
+Run Parrot+dBug ecosystem (use the splash2x benchmark suite as an example):
+> cd $SMT_MC_ROOT/xtern/eval/
+> ./eval.py -mc --smtmc-only splash2x-dbug.cfg
 
-One of the dbug-history-x (a sync operation scheduling plan) could look like this:
+Run dBug alone:
+> cd $SMT_MC_ROOT/xtern/eval/
+> ./eval.py -mc --dbug-only splash2x-dbug.cfg
 
-1 1 1 1 0
-1:pthread_mutex_init:RESOURCE_CREATE:1 0 0 0 0 0 0 0 0:4077692927:
-2 2 2 2 1
-1:pthread_mutex_lock:RESOURCE_ACCESS:2 0 0 0 0 0 0 0 0:4077692927:2:
-2:pthread_mutex_lock:RESOURCE_ACCESS:1 1 0 0 0 0 0 0 0:4077692927:2:
-2 1 2 2 2
-2:pthread_mutex_unlock:RESOURCE_RELEASE:1 2 0 0 0 0 0 0 0:4077692927:
-1:pthread_mutex_lock:RESOURCE_ACCESS:2 0 0 0 0 0 0 0 0:4077692927:2:
-1 1 1 1 0 3
-1:pthread_mutex_lock:RESOURCE_ACCESS:2 0 0 0 0 0 0 0 0:4077692927:2:
-1 1 1 1 0 4
-1:pthread_mutex_unlock:RESOURCE_RELEASE:3 0 0 0 0 0 0 0 0:4077692927:
-1 1 1 1 0 5
-1:pthread_join:THREAD_JOIN:4 0 0 0 0 0 0 0 0:2:
-1 1 1 1 0 6
-1:pthread_mutex_destroy:RESOURCE_DELETE:5 2 0 0 0 0 0 0 0:4077692927:
+In order to further learn how to run each program with Parrot+dBug or dBug:
+> cd $SMT_MC_ROOT/xtern/eval/
+> ./eval.py -mc --generate-xml-only splash2x-dbug.cfg
+> cd current/172_splash2_fft
+Run the Parrot+dBug ecosystem with the FFT program (please make sure to run 
+this command in the current/172_splash2_fft/ directory, because the option file
+current/172_splash2_fft/local.options has effects):
+> $SMT_MC_ROOT/mc-tools/dbug/install/bin/dbug-explorer ./run_xtern.xml
+Run dBug alone with the FFT program:
+> $SMT_MC_ROOT/mc-tools/dbug/install/bin/dbug-explorer ./run.xml
 
-
-Please refer to the user manual for more details of this scheduling plan.
-http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15213-f10/www/manual.pdf
-
-
-4. If you want to run a program with multiple arguments, you need a quote.
-And make sure you use absolute path, avoid "~" within your quote, since seems
-that ruby does something weird to this character.
-
-E.g., use this "chk-run" script for pbzip2:
-$ cd $SMT_MC_ROOT/xtern/apps/pbzip2
-$ ./mk
-$ ./chk-run
+Also, please refer to this "-h" for more evaluation options:
+> cd $SMT_MC_ROOT/xtern/eval/
+> ./eval.py -h
 
