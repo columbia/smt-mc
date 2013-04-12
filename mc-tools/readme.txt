@@ -9,6 +9,10 @@ Read this doc before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
 2. Install dBug.
 > cd $SMT_MC_ROOT/mc-tools
 > ./mk-dbug
+> cd $XTERN_ROOT/obj
+Rebuild xtern with "XTERN_PLUS_DBUG=1", as below:
+> make ENABLE_OPTIMIZED=0/1 clean && make ENABLE_OPTIMIZED=0/1 XTERN_PLUS_DBUG=1 \
+  && make ENABLE_OPTIMIZED=0/1 XTERN_PLUS_DBUG=1 install
 
 
 3. Set environment variables. Run "echo $LD_LIBRARY_PATH" to make sure it is correct.
