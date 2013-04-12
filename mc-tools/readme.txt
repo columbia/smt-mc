@@ -11,7 +11,8 @@ Read this doc before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf
 > ./mk-dbug
 > cd $XTERN_ROOT/obj
 Rebuild xtern with "XTERN_PLUS_DBUG=1", as below:
-> make ENABLE_OPTIMIZED=0/1 clean && make ENABLE_OPTIMIZED=0/1 XTERN_PLUS_DBUG=1 \
+> make ENABLE_OPTIMIZED=0/1 clean \
+  && make ENABLE_OPTIMIZED=0/1 XTERN_PLUS_DBUG=1 \
   && make ENABLE_OPTIMIZED=0/1 XTERN_PLUS_DBUG=1 install
 
 
