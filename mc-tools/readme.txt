@@ -1,3 +1,17 @@
+0. Patch applications for dBug.
+The following applications need special patches to run with dBug. 
+These patches are disabled by default. (By default applications are built to run with xtern) 
+To enable these patches, refer to 'mk' script of each application.
+=================================
+Program         Patch
+---------------------------------
+npb-lu          lu.patch
+---------------------------------
+bdb_rep         divergence.patch
+---------------------------------
+splash2-fmm     fmm-dbug.patch
+=================================
+
 1. Install libraries for dBug.
 You may need to install these (and maybe some more) libraries.
 Read this doc before you start: www.cs.cmu.edu/~jsimsa/dbug/dbug-manual.pdf

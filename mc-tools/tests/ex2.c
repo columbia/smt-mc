@@ -7,6 +7,9 @@
 
 pthread_mutex_t mutex;
 pthread_mutex_t mutex2;
+pthread_barrier_t bar;
+
+const int nt = 3;
 
 void *
 thread(void *args)
@@ -32,7 +35,8 @@ dbug_on();
     printf("\n\n============== end non-det self %u  =====================\n\n\n\n\n\n\n\n\n\n", (unsigned)pthread_self());
   //}
   pcs_exit();
-dbug_off();
+dbug_off_barrier(0, nt);
+pthread_barrier_wait(&bar);
 
 dbug_on();
   //pthread_exit(0);
@@ -43,11 +47,11 @@ int
 main(int argc, char *argv[])
 {
   dbug_off();
-  const int nt = 3;
   //return 0;
   int i;
   pthread_t tid[nt];
   assert(pthread_mutex_init(&mutex,NULL) == 0);
+  pthread_barrier_init(&bar, NULL, nt);
 
   dbug_on();
   pcs_enter();
@@ -60,13 +64,6 @@ main(int argc, char *argv[])
     assert(pthread_create(&tid[i],NULL,thread,NULL) == 0);
   dbug_off();
 
-  dbug_on();
-  pcs_enter();
-  assert(pthread_mutex_lock(&mutex2) == 0);
-  printf("Critical section master.\n");
-  assert(pthread_mutex_unlock(&mutex2) == 0);
-  pcs_exit();
-dbug_off();
 
     //sleep(10);
   dbug_on();

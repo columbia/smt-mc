@@ -1,4 +1,4 @@
-#include <dbug/interposition/stubs.h>
+#include <dbug/stubs.h>
 #include <pthread.h>
 #include <stdio.h>
 
