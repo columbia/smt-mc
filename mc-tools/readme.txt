@@ -10,6 +10,8 @@ npb-lu          lu.patch
 bdb_rep         divergence.patch
 ---------------------------------
 splash2-fmm     fmm-dbug.patch
+---------------------------------
+redis           redis-time.patch
 =================================
 
 1. Install libraries for dBug.
