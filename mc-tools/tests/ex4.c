@@ -64,6 +64,13 @@ main(int argc, char *argv[])
     assert(pthread_create(&tid[i],NULL,thread,NULL) == 0);
   dbug_off();
 
+  dbug_on();
+  pcs_enter();
+  assert(pthread_mutex_lock(&mutex2) == 0);
+  printf("Critical section master.\n");
+  assert(pthread_mutex_unlock(&mutex2) == 0);
+  pcs_exit();
+dbug_off();
 
     //sleep(10);
   dbug_on();
