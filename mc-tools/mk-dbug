@@ -26,11 +26,13 @@ if [ ! -f $SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/lib/libthrift-$T
 		--without-java --without-perl --without-php --without-python --without-qt4 --without-ruby 
 	# We can not add -j64 for make, since there is process races and the make would fail sometimes...
 	make -j64 && make install
+else
+	echo "thrift-$THRIFT_VER has already been built, go ahead and build dbug.";
 fi
 
 # Compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
-rm -rf install build
+rm -rf install
 ./bootstrap.sh
 mkdir build
 cd build
