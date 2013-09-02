@@ -11,24 +11,26 @@ if [ ! -d dbug ]; then
     mv dbug-$DBUG_VER dbug
 fi
 
-# Decompress.
-cd $SMT_MC_ROOT/mc-tools/dbug
-rm thrift-$THRIFT_VER -rf
-rm install -rf
-if [ ! -f thrift-$THRIFT_VER.tar.gz ]; then
-    wget http://www.cs.cmu.edu/~jsimsa/dbug/thrift-$THRIFT_VER.tar.gz
-fi
-tar zxvf thrift-$THRIFT_VER.tar.gz
+if [ ! -f $SMT_MC_ROOT/mc-tools/dbug/thrift-$THRIFT_VER/install/lib/libthrift-$THRIFT_VER.so ]; then
+	# Decompress.
+	cd $SMT_MC_ROOT/mc-tools/dbug
+	#rm thrift-$THRIFT_VER -rf
+	if [ ! -f thrift-$THRIFT_VER.tar.gz ]; then
+    		wget http://www.cs.cmu.edu/~jsimsa/dbug/thrift-$THRIFT_VER.tar.gz
+	fi
+	tar zxvf thrift-$THRIFT_VER.tar.gz
 
-# Compile thrift.
-cd thrift-$THRIFT_VER
-./configure --prefix=$PWD/install --without-c_glib --without-csharp --without-erlang --without-haskell \
-	--without-java --without-perl --without-php --without-python --without-qt4 --without-ruby 
-# We can not add -j64 for make, since there is process races and the make would fail sometimes...
-make -j64 && make install
+	# Compile thrift.
+	cd thrift-$THRIFT_VER
+	./configure --prefix=$PWD/install --without-c_glib --without-csharp --without-erlang --without-haskell \
+		--without-java --without-perl --without-php --without-python --without-qt4 --without-ruby 
+	# We can not add -j64 for make, since there is process races and the make would fail sometimes...
+	make -j64 && make install
+fi
 
 # Compile dbug.
 cd $SMT_MC_ROOT/mc-tools/dbug
+rm -rf install build
 ./bootstrap.sh
 mkdir build
 cd build
